@@ -30,7 +30,7 @@ options:
         description:
             - started/stopped are idempotent actions that will not run commands unless necessary.
         default: auto
-        choices: [ started, stopped ]
+        choices: [ started, stopped, restarted ]
 '''
 
 
@@ -60,6 +60,7 @@ def get_services(module):
 SERVICE_COMMANDS = {
     'started': ['brew', 'services', 'start'],
     'stopped': ['brew', 'services', 'stop'],
+    'restarted': ['brew', 'services', 'restart'],
 }
 
 
@@ -70,7 +71,7 @@ def main():
                 'type': 'str',
             },
             'state': {
-                'choices': ['started', 'stopped'],
+                'choices': ['started', 'stopped', 'restarted'],
             },
         },
         supports_check_mode=True
