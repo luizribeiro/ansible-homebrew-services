@@ -6,7 +6,7 @@ Ansible module to start/stop macOS services that are managed with
 |parameter      |required |default |choices                     |comments|
 |---            |---      |---     |---                         |---|
 |name           |yes      |        |                            |Name of service that will be started/stopped.|
-|state          |no       |auto    |started, stopped, restarted |Whether to start or stop the service.|
+|state          |yes      |        |started, stopped, restarted |Whether to start or stop the service.|
 
 ## Installing
 Just clone the `ansible-homebrew-services` repository into your user custom-module directory:
